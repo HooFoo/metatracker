@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<%= render 'searchbox' %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Size</th>
+      <th>Href</th>
+      <th>Magnet</th>
+      <th>Seeds</th>
+      <th>Leech</th>
+      <th>Images</th>
+      <th>Category</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @torrents.each do |torrent| %>
+      <tr>
+        <td><%= torrent.title %></td>
+        <td><%= torrent.description %></td>
+        <td><%= torrent.size %></td>
+        <td><%= torrent.href %></td>
+        <td><%= torrent.magnet %></td>
+        <td><%= torrent.seeds %></td>
+        <td><%= torrent.leech %></td>
+        <td><%= torrent.images %></td>
+        <td><%= torrent.category %></td>
+        <td><%= link_to 'Show', torrent %></td>
+        <td><%= link_to 'Edit', edit_torrent_path(torrent) %></td>
+        <td><%= link_to 'Destroy', torrent, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Torrent', new_torrent_path %>
