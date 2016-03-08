@@ -2,19 +2,18 @@
 
 <%= render 'searchbox' %>
 
-<table>
+<table class="torrents-table table table-striped">
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Size</th>
-      <th>Href</th>
-      <th>Magnet</th>
-      <th>Seeds</th>
-      <th>Leech</th>
-      <th>Images</th>
-      <th>Category</th>
-      <th colspan="3"></th>
+      <th><%= t 'title' %></th>
+      <th><%= t 'description' %></th>
+      <th><%= t 'size' %></th>
+      <th><%= t 'seeds' %></th>
+      <th><%= t 'leech' %></th>
+      <th><%= t 'images' %></th>
+      <th><%= t 'category' %></th>
+      <th><%= t 'href' %></th>
+      <th><%= t 'magnet' %></th>
     </tr>
   </thead>
 
@@ -24,15 +23,21 @@
         <td><%= torrent.title %></td>
         <td><%= torrent.description %></td>
         <td><%= torrent.size %></td>
-        <td><%= torrent.href %></td>
-        <td><%= torrent.magnet %></td>
+
         <td><%= torrent.seeds %></td>
         <td><%= torrent.leech %></td>
         <td><%= torrent.images %></td>
         <td><%= torrent.category %></td>
-        <td><%= link_to 'Show', torrent %></td>
-        <td><%= link_to 'Edit', edit_torrent_path(torrent) %></td>
-        <td><%= link_to 'Destroy', torrent, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <a href="<%= torrent.href %>">
+            Go to site
+          </a>
+        </td>
+        <td>
+          <a href="<%= torrent.magnet %>">
+            <img class="download-button" src="/images/download.png">
+          </a>
+        </td>
       </tr>
     <% end %>
   </tbody>
@@ -40,4 +45,3 @@
 
 <br>
 
-<%= link_to 'New Torrent', new_torrent_path %>

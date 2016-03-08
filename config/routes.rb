@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  resources :torrents
-  post '/torrents/search' => 'torrents#search'
+  get '/torrents/search' => 'torrents#search'
 
 
   post '/webhooks/receive' => 'web_hooks#receive_page_data'

@@ -15,6 +15,12 @@ class Torrent
 
   elasticsearch!
 
+  def self.by_query string, page
+    string='' if string.nil?
+    page=1 if page.nil?
+    es.search(string,page: page,per_page: 15).results
+  end
+
   def self.generate_id obj
       obj[:title].hash & obj[:size].hash & obj[:href]
   end
