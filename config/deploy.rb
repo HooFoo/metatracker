@@ -36,6 +36,10 @@ set :deploy_to, '~/metatracker'
 
 namespace :deploy do
 
+  desc "Restart  app"
+  task :restart do
+  end
+
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
       # Here we can do anything such as:

@@ -37,6 +37,7 @@ gem 'kaminari'
 gem 'httparty'
 gem 'mongoid', '~>5.1.1'
 gem 'mongoid-elasticsearch'
+gem 'capistrano3-puma'
 
 
 group :development, :test do
