@@ -840,3 +840,96 @@
 2016-03-08T14:15:18.811+0300 [clientcursormon] mem (MB) res:20 virt:545
 2016-03-08T14:15:18.811+0300 [clientcursormon]  mapped (incl journal view):320
 2016-03-08T14:15:18.826+0300 [clientcursormon]  connections:4
+2016-03-08T14:20:18.838+0300 [clientcursormon] mem (MB) res:20 virt:545
+2016-03-08T14:20:18.838+0300 [clientcursormon]  mapped (incl journal view):320
+2016-03-08T14:20:18.838+0300 [clientcursormon]  connections:4
+2016-03-08T14:22:55.756+0300 [conn9] insert metatracker_development.torrents query: { _id: ObjectId('56deb60fee6a6739d91f0933'), title: "Hello", description: "World", href: "http://www.ru/", category: "kek", magnet: "mgnt" } ninserted:1 keyUpdates:0 numYields:0 locks(micros) w:131260 143ms
+2016-03-08T14:22:55.759+0300 [conn9] command metatracker_development.$cmd command: insert { insert: "torrents", documents: [ { _id: ObjectId('56deb60fee6a6739d91f0933'), title: "Hello", description: "World", href: "http://www.ru/", category: "kek", magnet: "mgnt" } ], ordered: true } keyUpdates:0 numYields:0 locks(micros) w:1266 reslen:40 265ms
+2016-03-08T14:23:18.844+0300 [clientcursormon] mem (MB) res:23 virt:545
+2016-03-08T14:23:18.844+0300 [clientcursormon]  mapped (incl journal view):320
+2016-03-08T14:23:18.846+0300 [clientcursormon]  connections:4
+2016-03-08T14:28:18.861+0300 [clientcursormon] mem (MB) res:23 virt:545
+2016-03-08T14:28:18.861+0300 [clientcursormon]  mapped (incl journal view):320
+2016-03-08T14:28:18.861+0300 [clientcursormon]  connections:4
+2016-03-08T14:33:18.875+0300 [clientcursormon] mem (MB) res:23 virt:545
+2016-03-08T14:33:18.875+0300 [clientcursormon]  mapped (incl journal view):320
+2016-03-08T14:33:18.875+0300 [clientcursormon]  connections:4
+2016-03-08T14:38:18.891+0300 [clientcursormon] mem (MB) res:23 virt:545
+2016-03-08T14:38:18.908+0300 [clientcursormon]  mapped (incl journal view):320
+2016-03-08T14:38:18.908+0300 [clientcursormon]  connections:4
+2016-03-08T14:43:18.920+0300 [clientcursormon] mem (MB) res:23 virt:545
+2016-03-08T14:43:18.920+0300 [clientcursormon]  mapped (incl journal view):320
+2016-03-08T14:43:18.920+0300 [clientcursormon]  connections:4
+2016-03-08T14:48:18.935+0300 [clientcursormon] mem (MB) res:23 virt:545
+2016-03-08T14:48:18.935+0300 [clientcursormon]  mapped (incl journal view):320
+2016-03-08T14:48:18.935+0300 [clientcursormon]  connections:4
+2016-03-08T14:53:18.957+0300 [clientcursormon] mem (MB) res:23 virt:545
+2016-03-08T14:53:18.957+0300 [clientcursormon]  mapped (incl journal view):320
+2016-03-08T14:53:18.957+0300 [clientcursormon]  connections:4
+2016-03-08T14:58:18.972+0300 [clientcursormon] mem (MB) res:23 virt:545
+2016-03-08T14:58:18.972+0300 [clientcursormon]  mapped (incl journal view):320
+2016-03-08T14:58:18.972+0300 [clientcursormon]  connections:4
+2016-03-08T15:03:18.985+0300 [clientcursormon] mem (MB) res:23 virt:545
+2016-03-08T15:03:18.985+0300 [clientcursormon]  mapped (incl journal view):320
+2016-03-08T15:03:19.030+0300 [clientcursormon]  connections:4
+2016-03-08T15:08:19.043+0300 [clientcursormon] mem (MB) res:23 virt:545
+2016-03-08T15:08:19.043+0300 [clientcursormon]  mapped (incl journal view):320
+2016-03-08T15:08:19.043+0300 [clientcursormon]  connections:4
+2016-03-08T15:13:19.057+0300 [clientcursormon] mem (MB) res:23 virt:545
+2016-03-08T15:13:19.058+0300 [clientcursormon]  mapped (incl journal view):320
+2016-03-08T15:13:19.058+0300 [clientcursormon]  connections:4
+2016-03-08T15:18:19.070+0300 [clientcursormon] mem (MB) res:23 virt:545
+2016-03-08T15:18:19.085+0300 [clientcursormon]  mapped (incl journal view):320
+2016-03-08T15:18:19.085+0300 [clientcursormon]  connections:4
+2016-03-08T15:21:40.305+0300 [conn9] insert metatracker_development.torrents query: { _id: ObjectId('56dec3d4ee6a6739d91f0934'), title: "Hello", description: "World", href: "http://www.ru/", category: "kek", magnet: "mgnt" } ninserted:1 keyUpdates:0 numYields:0 locks(micros) w:159701 173ms
+2016-03-08T15:21:40.305+0300 [conn9] command metatracker_development.$cmd command: insert { insert: "torrents", documents: [ { _id: ObjectId('56dec3d4ee6a6739d91f0934'), title: "Hello", description: "World", href: "http://www.ru/", category: "kek", magnet: "mgnt" } ], ordered: true } keyUpdates:0 numYields:0 locks(micros) w:118 reslen:40 204ms
+2016-03-08T15:22:16.236+0300 [conn9] end connection 127.0.0.1:57430 (3 connections now open)
+2016-03-08T15:22:16.242+0300 [conn8] end connection 127.0.0.1:57428 (3 connections now open)
+2016-03-08T15:23:19.105+0300 [clientcursormon] mem (MB) res:24 virt:545
+2016-03-08T15:23:19.105+0300 [clientcursormon]  mapped (incl journal view):320
+2016-03-08T15:23:19.124+0300 [clientcursormon]  connections:2
+2016-03-08T15:28:19.142+0300 [clientcursormon] mem (MB) res:24 virt:545
+2016-03-08T15:28:19.142+0300 [clientcursormon]  mapped (incl journal view):320
+2016-03-08T15:28:19.142+0300 [clientcursormon]  connections:2
+2016-03-08T15:33:19.152+0300 [clientcursormon] mem (MB) res:24 virt:545
+2016-03-08T15:33:19.152+0300 [clientcursormon]  mapped (incl journal view):320
+2016-03-08T15:33:19.152+0300 [clientcursormon]  connections:2
+2016-03-08T15:38:19.163+0300 [clientcursormon] mem (MB) res:24 virt:545
+2016-03-08T15:38:19.174+0300 [clientcursormon]  mapped (incl journal view):320
+2016-03-08T15:38:19.174+0300 [clientcursormon]  connections:2
+2016-03-08T15:43:19.189+0300 [clientcursormon] mem (MB) res:24 virt:545
+2016-03-08T15:43:19.189+0300 [clientcursormon]  mapped (incl journal view):320
+2016-03-08T15:43:19.189+0300 [clientcursormon]  connections:2
+2016-03-08T15:48:19.202+0300 [clientcursormon] mem (MB) res:24 virt:545
+2016-03-08T15:48:19.202+0300 [clientcursormon]  mapped (incl journal view):320
+2016-03-08T15:48:19.202+0300 [clientcursormon]  connections:2
+2016-03-08T15:53:19.217+0300 [clientcursormon] mem (MB) res:24 virt:545
+2016-03-08T15:53:19.217+0300 [clientcursormon]  mapped (incl journal view):320
+2016-03-08T15:53:19.217+0300 [clientcursormon]  connections:2
+2016-03-08T15:58:19.229+0300 [clientcursormon] mem (MB) res:24 virt:545
+2016-03-08T15:58:19.229+0300 [clientcursormon]  mapped (incl journal view):320
+2016-03-08T15:58:19.229+0300 [clientcursormon]  connections:2
+2016-03-08T16:03:19.244+0300 [clientcursormon] mem (MB) res:24 virt:545
+2016-03-08T16:03:19.244+0300 [clientcursormon]  mapped (incl journal view):320
+2016-03-08T16:03:19.244+0300 [clientcursormon]  connections:2
+2016-03-08T16:08:19.256+0300 [clientcursormon] mem (MB) res:24 virt:545
+2016-03-08T16:08:19.256+0300 [clientcursormon]  mapped (incl journal view):320
+2016-03-08T16:08:19.256+0300 [clientcursormon]  connections:2
+2016-03-08T16:13:19.271+0300 [clientcursormon] mem (MB) res:24 virt:545
+2016-03-08T16:13:19.271+0300 [clientcursormon]  mapped (incl journal view):320
+2016-03-08T16:13:19.271+0300 [clientcursormon]  connections:2
+2016-03-08T16:18:19.286+0300 [clientcursormon] mem (MB) res:24 virt:545
+2016-03-08T16:18:19.300+0300 [clientcursormon]  mapped (incl journal view):320
+2016-03-08T16:18:19.300+0300 [clientcursormon]  connections:2
+2016-03-08T16:23:19.319+0300 [clientcursormon] mem (MB) res:24 virt:545
+2016-03-08T16:23:19.319+0300 [clientcursormon]  mapped (incl journal view):320
+2016-03-08T16:23:19.319+0300 [clientcursormon]  connections:2
+2016-03-08T16:28:19.333+0300 [clientcursormon] mem (MB) res:24 virt:545
+2016-03-08T16:28:19.333+0300 [clientcursormon]  mapped (incl journal view):320
+2016-03-08T16:28:19.333+0300 [clientcursormon]  connections:2
+2016-03-08T16:33:19.363+0300 [clientcursormon] mem (MB) res:24 virt:545
+2016-03-08T16:33:19.363+0300 [clientcursormon]  mapped (incl journal view):320
+2016-03-08T16:33:19.363+0300 [clientcursormon]  connections:2
+2016-03-08T16:38:19.376+0300 [clientcursormon] mem (MB) res:24 virt:545
+2016-03-08T16:38:19.376+0300 [clientcursormon]  mapped (incl journal view):320
+2016-03-08T16:38:19.376+0300 [clientcursormon]  connections:2
