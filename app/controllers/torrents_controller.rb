@@ -6,7 +6,7 @@ class TorrentsController < InheritedResources::Base
   end
 
   def search
-    @torrents = Torrent.by_query params[:q],params[:page]
+    @torrents = Torrent.by_query(params[:q],params[:page])
     render 'index'
   end
 

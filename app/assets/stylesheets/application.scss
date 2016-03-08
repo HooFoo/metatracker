@@ -25,3 +25,32 @@ body {
   border-radius: 10px;
   padding: 10px;
 }
+.footer{
+  margin: 0 10vw 0 10vw;
+  position: fixed;
+  width: 80vw;
+  bottom: 0;
+  background: #e5e5e5;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding: 10px 0px 0px 10px;
+}
+.created
+{
+  position: absolute;
+  right: 10px;
+  font-size: large;
+  font-weight: bold;
+}
+.footer-list > li > a{
+  text-decoration: none;
+  color: black;
+  font-size:2em;
+  &:hover{
+    text-decoration: none;
+    background-color: transparent;
+  }
+  &:visited{
+    color: black;
+  }
+}

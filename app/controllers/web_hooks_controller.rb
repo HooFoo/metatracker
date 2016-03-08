@@ -8,7 +8,9 @@ class WebHooksController < ApplicationController
                   :description => rec[:SubCategory],
                   :href => rec[:SiteUrl],
                   :category => rec[:Category],
-                  :magnet => rec[:ParsedContent][:Members][:MagnetLink]).save!
+                  :images => rec[:Image],
+                  :magnet => rec[:ParsedContent][:Members][:MagnetLink],
+                  :other => rec[:ParsedContent][:Members][:Properties]).save!
       render json: {:result => 'Ok'}
     rescue Exception => e
       Rails.logger.error e.backtrace

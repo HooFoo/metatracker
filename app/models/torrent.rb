@@ -11,14 +11,15 @@ class Torrent
   field :seeds, type: Integer
   field :leech, type: Integer
   field :category, type: String
-  field :images, type: Array
+  field :images, type: String
+  field :other, type: String
 
   elasticsearch!
 
   def self.by_query string, page
     string='' if string.nil?
     page=1 if page.nil?
-    es.search(string,page: page,per_page: 15).results
+    es.search(string,page: page,per_page: 15)
   end
 
   def self.generate_id obj

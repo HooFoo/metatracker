@@ -2,34 +2,44 @@
 
 <%= render 'searchbox' %>
 
+<%= paginate @torrents %>
+
 <table class="torrents-table table table-striped">
   <thead>
-    <tr>
-      <th><%= t 'title' %></th>
-      <th><%= t 'description' %></th>
-      <th><%= t 'size' %></th>
-      <th><%= t 'seeds' %></th>
-      <th><%= t 'leech' %></th>
-      <th><%= t 'images' %></th>
-      <th><%= t 'category' %></th>
-      <th><%= t 'href' %></th>
-      <th><%= t 'magnet' %></th>
-    </tr>
+  <tr>
+    <th><%= t 'title' %></th>
+    <th><%= t 'description' %></th>
+    <th><%= t 'size' %></th>
+    <th><%= t 'seeds' %></th>
+    <th><%= t 'leech' %></th>
+    <th><%= t 'images' %></th>
+    <th><%= t 'category' %></th>
+    <th><%= t 'otner' %></th>
+    <th><%= t 'href' %></th>
+    <th><%= t 'magnet' %></th>
+  </tr>
   </thead>
 
   <tbody>
-    <% @torrents.each do |torrent| %>
+  <% @torrents.each do |torrent| %>
       <tr>
-        <td><%= torrent.title %></td>
+        <td><h3><%= torrent.title %></h3></td>
         <td><%= torrent.description %></td>
         <td><%= torrent.size %></td>
 
         <td><%= torrent.seeds %></td>
         <td><%= torrent.leech %></td>
-        <td><%= torrent.images %></td>
-        <td><%= torrent.category %></td>
         <td>
-          <a href="<%= torrent.href %>">
+          <%if torrent.images %>
+              <a href="<%= torrent.images %>" target="_blank">
+                <img src='<%= torrent.images %>' class='torrent-image' alter='Not available'>
+              </a>
+          <% end %>
+        </td>
+        <td><%= torrent.category %></td>
+        <td><%= torrent.other %></td>
+        <td>
+          <a href="<%= torrent.href %>" target="_blank">
             Go to site
           </a>
         </td>
@@ -39,9 +49,10 @@
           </a>
         </td>
       </tr>
-    <% end %>
+  <% end %>
   </tbody>
 </table>
 
 <br>
 
+<%= paginate @torrents %>

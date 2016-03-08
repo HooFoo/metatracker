@@ -13,3 +13,6 @@
 /tmp
 /dev
 .idea
+*.log
+*.pid
+vendor/cache
