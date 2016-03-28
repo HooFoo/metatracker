@@ -1,5 +1,4 @@
 class TorrentsController < InheritedResources::Base
-  respond_to :html
 
   def main
     render 'main'
@@ -10,10 +9,14 @@ class TorrentsController < InheritedResources::Base
     render 'index'
   end
 
+  def autocomplete
+    render json: Torrent.autocomplete(params[:q])
+  end
+
   private
 
-    def torrent_params
-      params.require(:torrent).permit(:title, :description, :size, :href, :magnet, :seeds, :leech, :images, :category)
-    end
+  def torrent_params
+    params.require(:torrent).permit(:title, :description, :size, :href, :magnet, :seeds, :leech, :images, :category)
+  end
 end
 

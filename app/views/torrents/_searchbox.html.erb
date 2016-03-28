@@ -3,10 +3,11 @@
 
     <input id="query"
            name="q"
-           class="form-control"
+           class="form-control search-typeahead no-clear"
            type="text"
            placeholder="<%= t :search_placeholder %>"
-           value="<%= params[:q] if params[:q]%>"/>
+           value="<%= params[:q] if params[:q]%>"
+           data-autocomplete-source = "<%= autocomplete_path %>" />
     <span class="input-group-btn">
       <button type="submit" class="btn btn-primary">
         <%= t :search %>

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get '/torrents/search' => 'torrents#search'
-
+  get '/torrents/autocomplete' => 'torrents#autocomplete'
 
   post '/webhooks/receive' => 'web_hooks#receive_page_data'
   root 'torrents#main'

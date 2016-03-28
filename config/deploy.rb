@@ -3,12 +3,26 @@ lock '3.4.0'
 
 set :application, 'metatracker'
 set :repo_url, 'git@github.com:HooFoo/metatracker.git'
+set :shared_path, '~/metatracker/shared'
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, '~/metatracker'
+set :puma_threads,    [4, 16]
+set :puma_workers,    1
+
+set :pty,             true
+set :use_sudo,        false
+set :puma_bind,       "unix://#{shared_path}/tmp/sockets/puma.sock"
+set :puma_conf,       "#{shared_path}/puma.rb"
+set :puma_state,      "#{shared_path}/tmp/pids/puma.state"
+set :puma_pid,        "#{shared_path}/tmp/pids/puma.pid"
+set :puma_access_log, "#{release_path}/log/puma.error.log"
+set :puma_error_log,  "#{release_path}/log/puma.access.log"
+set :puma_preload_app, true
+set :puma_worker_timeout, nil
 
 # Default value for :scm is :git
 # set :scm, :git

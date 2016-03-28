@@ -14,12 +14,27 @@ class Torrent
   field :images, type: String
   field :other, type: String
 
-  elasticsearch!
+  elasticsearch! index_mappings: {
+      title: {
+          type: 'multi_field',
+          fields: {
+              title: {type: 'string', boost: 10},
+              suggest: {type: 'completion'}
+          }
+      },
+      description: {type: 'string'},
+      category: {type: 'string'},
+      other: {type: 'string'}
+  }
 
   def self.by_query string, page
     string='' if string.nil?
     page=1 if page.nil?
     es.search(string,page: page,per_page: 15)
+  end
+
+  def self.autocomplete q
+    es.completion(q,'title.suggest').map {|e| e['text'] }
   end
 
   def self.generate_id obj
