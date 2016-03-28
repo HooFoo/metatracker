@@ -34,7 +34,7 @@ class Torrent
   end
 
   def self.autocomplete q
-    es.completion(q,'title.suggest').map {|e| e['text'] }
+    es.completion(q,'title.suggest').map {|e| e['text'] unless e.nil? }
   end
 
   def self.generate_id obj
