@@ -13,6 +13,8 @@ set :deploy_to, '~/metatracker'
 set :puma_threads,    [4, 16]
 set :puma_workers,    1
 
+set :stage,           :production
+set :deploy_via,      :remote_cache
 set :pty,             true
 set :use_sudo,        false
 set :puma_bind,       "unix://#{shared_path}/sockets/puma.sock"
@@ -23,6 +25,7 @@ set :puma_access_log, "#{release_path}/log/puma.error.log"
 set :puma_error_log,  "#{release_path}/log/puma.access.log"
 set :puma_preload_app, true
 set :puma_worker_timeout, nil
+set :linked_files, %w{ config/secrets.yml .env}
 
 # Default value for :scm is :git
 # set :scm, :git
@@ -50,16 +53,18 @@ set :puma_worker_timeout, nil
 
 namespace :deploy do
 
+  before :starting,     :check_revision
+  after  :finishing,    :compile_assets
+  after  :finishing,    :cleanup
+  after  :finishing,    :restart
+
   desc "Restart  app"
   task :restart do
   end
 
   after :restart, :clear_cache do
-    on roles(:web), in: :groups, limit: 3, wait: 10 do
-      # Here we can do anything such as:
-      # within release_path do
-      #   execute 'rails -s '
-      # end
+    on roles(:app), in: :sequence, wait: 5 do
+      invoke 'puma:restart'
     end
   end
 

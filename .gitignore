@@ -16,3 +16,4 @@
 *.log
 *.pid
 vendor/cache
+.env
