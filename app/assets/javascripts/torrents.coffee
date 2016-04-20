@@ -19,5 +19,17 @@ class View
       $('#query').typeahead null
         ,
         source: bh
+    this.bindEvents(document,'domReady',this.ajustBanners)
+
+  ajustBanners: ->
+    id = 'top-banner'
+    if(document.getElementById)
+      newheight = document.getElementById(id).contentWindow.document.body.scrollHeight;
+      newwidth = document.getElementById(id).contentWindow.document.body.scrollWidth;
+    document.getElementById(id).height = (newheight) + "px";
+    document.getElementById(id).width = (newwidth) + "px";
+
+  bindEvents: (element,name,cb) ->
+    $(element).on(name,cb)
 
 new View

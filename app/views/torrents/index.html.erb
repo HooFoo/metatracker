@@ -1,58 +1,10 @@
 <p id="notice"><%= notice %></p>
+<%= render 'torrents/banner_top' %>
 
 <%= render 'searchbox' %>
 
 <%= paginate @torrents %>
-
-<table class="torrents-table table table-striped">
-  <thead>
-  <tr>
-    <th><%= t 'title' %></th>
-    <th><%= t 'description' %></th>
-    <th><%= t 'size' %></th>
-    <th><%= t 'seeds' %></th>
-    <th><%= t 'leech' %></th>
-    <th><%= t 'images' %></th>
-    <th><%= t 'category' %></th>
-    <th><%= t 'other' %></th>
-    <th><%= t 'href' %></th>
-    <th><%= t 'magnet' %></th>
-  </tr>
-  </thead>
-
-  <tbody>
-  <% @torrents.each do |torrent| %>
-      <tr>
-        <td><h3><%= torrent.title %></h3></td>
-        <td><%= torrent.description %></td>
-        <td><%= torrent.size %></td>
-
-        <td><%= torrent.seeds %></td>
-        <td><%= torrent.leech %></td>
-        <td>
-          <%if torrent.images %>
-              <a href="<%= torrent.images %>" target="_blank">
-                <img src='<%= torrent.images %>' class='torrent-image' alter='Not available'>
-              </a>
-          <% end %>
-        </td>
-        <td><%= torrent.category %></td>
-        <td><%= torrent.other %></td>
-        <td>
-          <a href="<%= torrent.href %>" target="_blank">
-            Go to site
-          </a>
-        </td>
-        <td>
-          <a href="<%= torrent.magnet %>">
-            <img class="download-button" src="/images/download.png">
-          </a>
-        </td>
-      </tr>
-  <% end %>
-  </tbody>
-</table>
-
+  <%= render 'table' %>
 <br>
 
 <%= paginate @torrents %>

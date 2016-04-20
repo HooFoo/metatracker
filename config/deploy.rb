@@ -53,7 +53,6 @@ set :linked_files, %w{ config/secrets.yml .env}
 
 namespace :deploy do
 
-  before :starting,     :check_revision
   after  :finishing,    :compile_assets
   after  :finishing,    :cleanup
   after  :finishing,    :restart
