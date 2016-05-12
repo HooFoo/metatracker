@@ -20,6 +20,7 @@ class View
         ,
         source: bh
     this.bindEvents(document,'domReady',this.ajustBanners)
+    this.bindEvents($('query-button'),'click',this.onSearchButtonClicked)
 
   ajustBanners: ->
     id = 'top-banner'
@@ -28,6 +29,9 @@ class View
       newwidth = document.getElementById(id).contentWindow.document.body.scrollWidth;
     document.getElementById(id).height = (newheight) + "px";
     document.getElementById(id).width = (newwidth) + "px";
+
+  onSearchButtonClicked: ->
+    this
 
   bindEvents: (element,name,cb) ->
     $(element).on(name,cb)

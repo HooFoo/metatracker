@@ -5,6 +5,7 @@ class Torrent
 
   field :title, type: String
   field :description, type: String
+  field :sub_category, type: String
   field :size, type: String
   field :href, type: String
   field :magnet, type: String

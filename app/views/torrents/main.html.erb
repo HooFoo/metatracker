@@ -1,10 +1,17 @@
-<div class="row">
-  <h1 class="welcome">
-    <%= t :welcome %>
-  </h1>
-</div>
-<div class="row">
-  <div class="form-wrapper">
-    <%= render 'searchbox' %>
+<div class="start">
+  <div class="row">
+    <h1 class="welcome">
+      <%= t :welcome %>
+    </h1>
+  </div>
+  <div class="row">
+    <div class="form-wrapper">
+      <%= render 'searchbox' %>
+    </div>
+  </div>
+  <div class="search-result">
+    <div class="search-wrapper">
+      <iframe frameborder="0" scrolling="no" class="search-frame" src="/torrents/search?q=12"></iframe>
+    </div>
   </div>
 </div>

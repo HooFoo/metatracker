@@ -1,8 +1,8 @@
 ru:
   search: "Поиск"
-  search_placeholder: "Введите что-то о торренте: название, тип, качество"
+  search_placeholder: "Например: Стас Михайлов"
   search_label: ""
-  welcome: "Добро пожаловать на метатрекер"
+  welcome: "Что ты хочешь скачать?"
   title: "Название"
   description: "Описание"
   size: "Размер"

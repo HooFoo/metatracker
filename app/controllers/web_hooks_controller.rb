@@ -4,11 +4,18 @@ class WebHooksController < ApplicationController
     Rails.logger.debug params.inspect
     rec = params
     begin
-      Torrent.new(:title => rec[:ParsedContent][:Members][:Header],
-                  :description => rec[:SubCategory],
+      img = rec[:ParsedContent][:Members][:Image]
+      images = []
+      unless img.nil?
+        images = img.split(',')
+      end
+      Torrent.new(:sub_category => rec[:SubCategory],
                   :href => rec[:SiteUrl],
                   :category => rec[:Category],
-                  :images => rec[:Image],
+                  :images => images,
+                  :title => rec[:ParsedContent][:Members][:Header],
+                  :description => rec[:ParsedContent][:Members][:Description],
+                  :size => rec[:ParsedContent][:Members][:Size],
                   :magnet => rec[:ParsedContent][:Members][:MagnetLink],
                   :other => rec[:ParsedContent][:Members][:Properties]).save!
       render json: {:result => 'Ok'}

@@ -18,44 +18,72 @@
 
 body {
   background-image: image-url("body_bg.png");
+  background-attachment: fixed;
+  background-position: 50% 0px;
+  background-repeat: no-repeat;
+  min-width: 990px;
+  min-height: 100%;
 }
 
 .body-wrapper {
-  margin: 10% 10%;
-  background: #e5e5e5;
+  background: #fff;
+  width: 960px;
+  min-height: 100%;
   border-radius: 10px;
-  padding: 10px;
+  margin: 100px auto 0px auto;
 }
-.footer{
-  margin: 0 10vw 0 10vw;
-  position: fixed;
-  width: 80vw;
+
+.footer {
+  position: absolute;
+  width: 960px;
   bottom: 0;
-  background: #e5e5e5;
+  background: #FFFFFF;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  padding: 10px 0px 0px 10px;
+  border: 2px solid #E7E7E7;
+  overflow: hidden;
+  .footer-list {
+    margin: 0px;
+    .footer-item {
+      padding: 7px;
+      transition: 0.5s background;
+      margin: 0px !important;
+      &:hover {
+        background: #ececec;
+      }
+    }
+    .created {
+      position: absolute;
+      right: 15px;
+      font-size: large;
+      font-weight: bold;
+      background: none !important;
+      cursor: default;
+    }
+  }
 }
-.created
-{
-  position: absolute;
-  right: 10px;
-  font-size: large;
-  font-weight: bold;
-}
-.footer-list > li > a{
+
+.footer-list > li > a {
   text-decoration: none;
   color: black;
-  font-size:2em;
-  &:hover{
+  font-size: 2em;
+  &:hover {
     text-decoration: none;
     background-color: transparent;
   }
-  &:visited{
+  &:visited {
     color: black;
   }
 }
-.table
-{
+
+.table {
   table-layout: fixed;
+}
+
+.start {
+  border: 1px solid #CECECE;
+  border-radius: 5px;
+  width: 960px;
+  padding: 20px;
+  background: #FFF;
 }

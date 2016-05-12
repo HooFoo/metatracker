@@ -7,10 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <%= render 'shared/banner_top' %>
   <div class="body-wrapper container-fluid">
     <%= yield %>
+    <%= render 'footer' %>
   </div>
-  <%= render 'footer' %>
+  <%= render 'shared/banner_bottom' %>
   <%= render 'application/analytics' %>
 </body>
 </html>

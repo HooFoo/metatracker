@@ -9,7 +9,7 @@
            value="<%= params[:q] if params[:q]%>"
            data-autocomplete-source = "<%= autocomplete_path %>" />
     <span class="input-group-btn">
-      <button type="submit" class="btn btn-primary">
+      <button id="query-button" type="submit" class="btn btn-primary">
         <%= t :search %>
       </button>
     </span>

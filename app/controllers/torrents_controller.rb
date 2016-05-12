@@ -1,4 +1,4 @@
-class TorrentsController < InheritedResources::Base
+class TorrentsController < ApplicationController
 
   def main
     render 'main'
@@ -6,7 +6,7 @@ class TorrentsController < InheritedResources::Base
 
   def search
     @torrents = Torrent.by_query(params[:q],params[:page])
-    render 'index'
+    render partial: 'index'
   end
 
   def autocomplete
