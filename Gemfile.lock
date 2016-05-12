@@ -226,7 +226,7 @@ DEPENDENCIES
   better_errors
   bootstrap
   byebug
-  capistrano (~> 3.4)
+  capistrano
   capistrano-bundler
   capistrano-rails
   capistrano-rvm
