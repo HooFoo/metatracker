@@ -1,0 +1,27 @@
+<tr>
+  <td class="title-field"><h3><%= torrent.title %></h3></td>
+  <td class="description-field"><%= torrent.description %></td>
+  <td class="size-field"><%= torrent.size %></td>
+
+  <td class="seeds-field"><%= torrent.seeds %></td>
+  <td class="leech-field"><%= torrent.leech %></td>
+  <td class="images-field">
+    <%if torrent.images %>
+        <a href="<%= torrent.images %>" target="_blank">
+          <img src='<%= torrent.images %>' class='torrent-image' alter='Not available'>
+        </a>
+    <% end %>
+  </td>
+  <td class="category-field"><%= torrent.category %></td>
+  <td class="other-field"><%= torrent.other %></td>
+  <td class="href-field">
+    <a href="<%= torrent.href %>" target="_blank">
+      Go to site
+    </a>
+  </td>
+  <td class="magnet-field">
+    <a href="<%= torrent.magnet %>">
+      <img class="download-button" src="/images/download.png">
+    </a>
+  </td>
+</tr>

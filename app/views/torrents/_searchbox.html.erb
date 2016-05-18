@@ -1,17 +1,16 @@
-<form method="get" class="form-horizontal" action="/torrents/search">
-  <div class="input-group">
-
-    <input id="query"
-           name="q"
-           class="form-control search-typeahead no-clear"
-           type="text"
-           placeholder="<%= t :search_placeholder %>"
-           value="<%= params[:q] if params[:q]%>"
-           data-autocomplete-source = "<%= autocomplete_path %>" />
+<%= form_tag('/torrents/search', remote: true, method: 'get', class: 'form-horizontal', id: 'search-form') do %>
+    <div class="input-group">
+      <input id="query"
+             name="q"
+             class="form-control search-typeahead no-clear"
+             type="text"
+             placeholder="<%= t :search_placeholder %>"
+             value="<%= params[:q] if params[:q]%>"
+             data-autocomplete-source = "<%= autocomplete_path %>" />
     <span class="input-group-btn">
       <button id="query-button" type="submit" class="btn btn-primary">
         <%= t :search %>
       </button>
     </span>
-  </div>
-</form>
+    </div>
+<% end %>

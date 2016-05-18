@@ -1,8 +1,11 @@
 class TorrentsController < ApplicationController
 
+  layout 'application'
+
   def main
     render 'main'
   end
+
 
   def search
     @torrents = Torrent.by_query(params[:q],params[:page])
