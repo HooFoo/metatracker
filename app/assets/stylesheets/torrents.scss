@@ -2,18 +2,55 @@
 // They will automatically be included in application.scss.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.welcome{
+.welcome {
   text-align: center;
-  width:100%
+  width: 100%
 }
+
 .form-wrapper {
   padding: 10px;
 }
-.download-button{
+
+.download-button {
   height: 24px;
   width: 24px;
 }
-.torrent-image{
+
+.torrent-image {
   max-width: 100px;
   max-height: 200px;
+}
+
+.single-torrent {
+  border-bottom: 1px solid #CECECE;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.title-field {
+  font-size: 13pt;
+  font-weight: bold;
+  padding: 10px 0px;
+}
+.pagination{
+  margin: 0px !important;
+  font-size: 12px;
+}
+#paginator_bottom
+{
+  text-align: center;
+}
+span.page{
+  color: #9E9E9E !important;
+   > a{
+    color: #9E9E9E !important;
+    &:hover{
+      background: none;
+      text-decoration: none;
+    }
+  }
+}
+
+span.next,span.last,span.gap, span.prev, span.first{
+  display: none;
 }

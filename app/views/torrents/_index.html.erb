@@ -1,10 +1,7 @@
 <p id="notice"><%= notice %></p>
 
-<div id="paginator_top">
-  <%= paginate(@torrents, :remote => true) %>
-</div>
-<table class="torrents-table table table-striped">
-  <thead>
+<!--table class="torrents-table table table-striped">
+  <!--thead>
   <tr>
     <th><%= t 'title' %></th>
     <th><%= t 'description' %></th>
@@ -18,11 +15,8 @@
     <th><%= t 'magnet' %></th>
   </tr>
   </thead>
-  <tbody id="torrents">
-  <%= render @torrents %>
-  </tbody>
-</table>
-
+</table-->
+<%= render @torrents %>
 <div id="paginator_bottom">
   <%= paginate(@torrents, :remote => true) %>
 </div>

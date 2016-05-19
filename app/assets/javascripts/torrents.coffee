@@ -50,8 +50,9 @@ class View
   onResultsRecieved: (e, data, status, xhr) =>
     console.log('Result recieved')
     $('#search-result').html(xhr.responseText)
-    @hideLoader()
     @applyPagination()
+    @hideLoader()
+
 
   bindEvents: (element,name,cb) ->
     $(element).on(name,cb)
