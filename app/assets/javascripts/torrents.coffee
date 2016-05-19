@@ -20,9 +20,9 @@ class View
       $('#query').typeahead null
         ,
         source: bh
-
     $(document).ready(@ajustBanners)
     $(document).ready(@bindCallbacks)
+    $(document).ready(@checkQuery)
 
   bindCallbacks: =>
     console.log('Bind callbacks')
@@ -43,8 +43,17 @@ class View
     document.getElementById(id).height = (newheight) + "px";
     document.getElementById(id).width = (newwidth) + "px";
 
+  checkQuery: =>
+    path = window.location.pathname.replace(/(\/)|(_)/g,' ').trim()
+    if path.length>1
+      $('#query').val(path)
+      $('#query-button').submit()
+
   onSearchButtonClicked: =>
     console.log('Button Clicked')
+    q = $('#query').val()
+    prepared = '/'+@prepareQuery(q)
+    window.history.pushState("Get-torrent", "Search: "+q, prepared);
     @showLoader()
 
   onResultsRecieved: (e, data, status, xhr) =>
@@ -53,6 +62,8 @@ class View
     @applyPagination()
     @hideLoader()
 
+  prepareQuery: (q) ->
+    q.replace(/(\/)|(\s)/g,'_').trim()
 
   bindEvents: (element,name,cb) ->
     $(element).on(name,cb)

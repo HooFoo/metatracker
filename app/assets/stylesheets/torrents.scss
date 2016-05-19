@@ -32,25 +32,46 @@
   font-weight: bold;
   padding: 10px 0px;
 }
-.pagination{
+
+.pagination {
   margin: 0px !important;
   font-size: 12px;
 }
-#paginator_bottom
-{
+
+#paginator_bottom {
   text-align: center;
 }
-span.page{
+
+span.page {
   color: #9E9E9E !important;
-   > a{
-    color: #9E9E9E !important;
-    &:hover{
-      background: none;
-      text-decoration: none;
-    }
-  }
+
 }
 
-span.next,span.last,span.gap, span.prev, span.first{
+span.next, span.last, span.gap, span.prev, span.first {
   display: none;
+}
+
+.description-field {
+  width: 10%;
+}
+
+.size-field {
+  width: 100px;
+}
+.href-field {
+  width: 45px;
+}
+
+.tinfo-field {
+
+  text-align: center;
+  padding-bottom: 8px;
+}
+
+.tinfo-heading > th {
+  font-size: 10px;
+  padding-bottom: 2px;
+  text-align: center;
+  padding-left: 2px;
+  padding-right: 2px;
 }

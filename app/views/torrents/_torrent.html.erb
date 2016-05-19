@@ -1,31 +1,43 @@
 <tr>
   <table class="single-torrent">
+
     <tr>
       <td colspan="9" class="title-field">
         <%= torrent.title %>
       </td>
     </tr>
+    <tr class="tinfo-heading">
+      <th><%= t 'description' %></th>
+      <th><%= t 'size' %></th>
+      <th><%= t 'seeds' %></th>
+      <th><%= t 'leech' %></th>
+      <th><%= t 'images' %></th>
+      <th><%= t 'category' %></th>
+      <th><%= t 'other' %></th>
+      <th><%= t 'href' %></th>
+      <th><%= t 'magnet' %></th>
+    </tr>
     <tr>
-      <td class="description-field"><%= torrent.description %></td>
-      <td class="size-field"><%= torrent.size %></td>
+      <td class="tinfo-field description-field"><%= torrent.description %></td>
+      <td class="tinfo-field size-field"><%= torrent.size %></td>
 
-      <td class="seeds-field"><%= torrent.seeds %></td>
-      <td class="leech-field"><%= torrent.leech %></td>
-      <td class="images-field">
+      <td class="tinfo-field seeds-field"><%= torrent.seeds %></td>
+      <td class="tinfo-field leech-field"><%= torrent.leech %></td>
+      <td class="tinfo-field images-field">
         <% if torrent.images %>
             <a href="<%= torrent.images %>" target="_blank">
               <img src='<%= torrent.images %>' class='torrent-image' alter='Not available'>
             </a>
         <% end %>
       </td>
-      <td class="category-field"><%= torrent.category %></td>
-      <td class="other-field"><%= torrent.other %></td>
-      <td class="href-field">
+      <td class="tinfo-field category-field"><%= torrent.category %></td>
+      <td class="tinfo-field other-field"><%= torrent.other %></td>
+      <td class="tinfo-field href-field">
         <a href="<%= torrent.href %>" target="_blank">
           Go to site
         </a>
       </td>
-      <td class="magnet-field">
+      <td class="tinfo-field magnet-field">
         <a href="<%= torrent.magnet %>">
           <img class="download-button" src="/images/download.png">
         </a>

@@ -24,7 +24,13 @@ body {
   min-width: 990px;
   min-height: 100%;
 }
-
+a{
+  color: #9E9E9E !important;
+  &:hover {
+    background: none;
+    text-decoration: none;
+  }
+}
 .body-wrapper {
   background: #E5EFF1;
   width: 960px;
@@ -54,7 +60,7 @@ body {
       transition: 0.5s background;
       margin: 0px !important;
       &:hover {
-        background: #ececec;
+        background: #B5B5B5;
       }
     }
     .created {
