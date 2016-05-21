@@ -9,8 +9,8 @@
     <tr class="tinfo-heading">
       <th><%= t 'description' %></th>
       <th><%= t 'size' %></th>
-      <th><%= t 'seeds' %></th>
-      <th><%= t 'leech' %></th>
+      <th class="seeds-field"><%= t 'seeds' %></th>
+      <th class="leech-field"><%= t 'leech' %></th>
       <th><%= t 'images' %></th>
       <th><%= t 'category' %></th>
       <th><%= t 'other' %></th>
@@ -23,18 +23,21 @@
 
       <td class="tinfo-field seeds-field"><%= torrent.seeds %></td>
       <td class="tinfo-field leech-field"><%= torrent.leech %></td>
-      <td class="tinfo-field images-field">
+      <td class="tinfo-field images-field"
+          <%= "#{ torrent.images.nil? ? 'style={display:none;}' : ''}" %>>
         <% if torrent.images %>
             <a href="<%= torrent.images %>" target="_blank">
               <img src='<%= torrent.images %>' class='torrent-image' alter='Not available'>
             </a>
         <% end %>
       </td>
-      <td class="tinfo-field category-field"><%= torrent.category %></td>
+      <td class="tinfo-field category-field">
+        <img src="<%= asset_path("media_types/#{media_type_icon(torrent.category)}") %>" alt="<%= torrent.category %>"/>
+      </td>
       <td class="tinfo-field other-field"><%= torrent.other %></td>
       <td class="tinfo-field href-field">
         <a href="<%= torrent.href %>" target="_blank">
-          Go to site
+          <img src="<%= asset_path("trackers_icons/#{site_favicon(torrent.href)}") %>" alt='go'/>
         </a>
       </td>
       <td class="tinfo-field magnet-field">

@@ -105,11 +105,23 @@ a{
 
 }
 #loader{
-  background-image: asset_url('loading.gif');
-  background-position: center;
-  background-repeat: no-repeat;
+  background: asset_url('loading.gif') no-repeat center;
   background-size: contain;
   width: 100%;
   height: 200px;
   display: none;
+}
+#backspace{
+  visibility: hidden;
+  display: inline-block;
+  height: 34px;
+  width: 32px;
+  background-size: contain;
+  position: absolute;
+  top: 3px;
+  transform: translateX(-115%);
+  z-index: 2;
+  opacity: 0.5;
+  cursor: pointer;
+  background: asset_url('backspace') no-repeat;
 }

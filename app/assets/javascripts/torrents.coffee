@@ -20,28 +20,23 @@ class View
       $('#query').typeahead null
         ,
         source: bh
-    $(document).ready(@ajustBanners)
     $(document).ready(@bindCallbacks)
     $(document).ready(@checkQuery)
+    @onQueryValueChanged()
 
   bindCallbacks: =>
     console.log('Bind callbacks')
     @bindEvents('#query-button', 'click', @onSearchButtonClicked)
     @bindEvents('#search-form', 'ajax:success', @onResultsRecieved)
+    @bindEvents('#query','change paste keyup',@onQueryValueChanged)
+    @bindEvents('#backspace','click',@onBackspaceClick)
+
 
   applyPagination: =>
     console.log("Apply pagination")
     @bindEvents('#paginator_top,#paginator_bottom', 'ajax:success', @onResultsRecieved )
     @bindEvents('#paginator_top,#paginator_bottom', 'click', @showLoader )
 
-  ajustBanners: ->
-    id = 'top-banner'
-    console.log('ajust banners')
-    if(document.getElementById)
-      newheight = document.getElementById(id).contentWindow.document.body.scrollHeight;
-      newwidth = document.getElementById(id).contentWindow.document.body.scrollWidth;
-    document.getElementById(id).height = (newheight) + "px";
-    document.getElementById(id).width = (newwidth) + "px";
 
   checkQuery: =>
     path = window.location.pathname.replace(/(\/)|(_)/g,' ').trim()
@@ -62,6 +57,19 @@ class View
     @applyPagination()
     @hideLoader()
 
+  onQueryValueChanged: ->
+    console.log('Query changed')
+    q = $('#query').val()
+    if q? and q.length >0
+      $('#backspace').css({ visibility: 'visible'})
+    else
+      console.log('here')
+      $('#backspace').css({visibility:'hidden'})
+
+  onBackspaceClick: ->
+    console.log('Backspace clicked')
+    $('#query').val('')
+
   prepareQuery: (q) ->
     q.replace(/(\/)|(\s)/g,'_').trim()
 
@@ -75,5 +83,6 @@ class View
   hideLoader: ->
     $('#search-result').show(500)
     $('#loader').hide(500)
+
 
 window.ViewController = new View
