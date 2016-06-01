@@ -39,7 +39,7 @@ class View
 
 
   checkQuery: =>
-    path = window.location.pathname.replace(/(\/)|(_)/g,' ').trim()
+    path = decodeURIComponent(window.location.pathname).replace(/(\/)|(_)/g,' ').trim()
     if path.length>1
       $('#query').val(path)
       $('#query-button').submit()

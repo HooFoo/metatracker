@@ -1,8 +1,13 @@
 module TorrentsHelper
+
   MEDIA_TYPE = {
-      :video => 'video.png',
+      :movies => 'video.png',
       :audio => 'audio.png',
-      :software => 'soft.png'
+      :soft => 'soft.png',
+      :series => 'series.png',
+      :music => 'music.png',
+      :games => 'games.png',
+      :books => 'books.png'
   }
 
   def autocomplete_path

@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get '/torrents/autocomplete' => 'torrents#autocomplete'
   get '/banner/:type' => 'banner#banner'
   post '/webhooks/receive' => 'web_hooks#receive_page_data'
+  get '/magnet/:torrent_id' =>'links#magnet'
   match '/*path' => 'torrents#main', via: :get
   root 'torrents#main'
 
