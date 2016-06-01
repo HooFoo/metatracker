@@ -125,3 +125,7 @@ a{
   cursor: pointer;
   background: asset_url('backspace') no-repeat;
 }
+
+.twitter-typeahead {
+  z-index: 1;
+}
