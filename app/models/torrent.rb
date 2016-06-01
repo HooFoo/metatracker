@@ -32,7 +32,7 @@ class Torrent
                   tokenizer: {
                       nGram: {
                           type: 'nGram',
-                          min_gram: 2,
+                          min_gram: 3,
                           max_gram: 20}},
                   filter: {
                       snowball: {
@@ -45,7 +45,7 @@ class Torrent
                       },
                       app_ngram: {
                           type: 'nGram',
-                          min_gram: 4,
+                          min_gram: 3,
                           max_gram: 20
                       },
                       worddelimiter: {
