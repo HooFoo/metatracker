@@ -5,10 +5,10 @@ class WebHooksController < ApplicationController
       :Description => :description,
       :Size => :size,
       :MagnetLink => :magnet,
-      :Properties => :other
+      :Properties => :other,
+      :Image => :images
   }
   def receive_page_data
-    Rails.logger.debug params.inspect
     rec = params
     begin
       hash = {
@@ -26,7 +26,7 @@ class WebHooksController < ApplicationController
       Torrent.new(hash).save!
       render json: {:result => 'Ok'}
     rescue Exception => e
-      Rails.logger.error e.backtrace
+      Rails.logger.error e.backtrpace
       render json: {:result => 'Error', :message => e.message}
     end
   end
@@ -34,19 +34,20 @@ class WebHooksController < ApplicationController
   private
 
   def add_to_hash(hash, field, values, type)
+    arr = JSON.parse values
     if type == 'LinkToFile' || type == 'LinkToInternalStorage'
-      hash[field] = values
+      hash[field] = arr
     elsif type == 'DateTime'
-      hash[field] = DateTime.strptime(values[0],'%Y-%m-%d %H:%M:%SW')
+      hash[field] = DateTime.strptime(arr[0],'%Y-%m-%d %H:%M:%SW')
     else
-      hash[field] = values[0]
+      hash[field] = arr[0]
     end
 
   end
 
   def record_params
-    params.require(:record).permit(:SiteUrl, :Category, :SubCategory, :ParsedContent => {
-        :Members => [:Header, :MagnetLink]
+    params.permit(:SiteUrl, :Category, :SubCategory, :ParsedContent => {
+        :Members => [:Key, :Value, :ValueType]
     })
   end
 end
