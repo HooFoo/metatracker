@@ -1,5 +1,3 @@
-== README
-
 # Project is abadoned
 
 - Rails 4.2.4
